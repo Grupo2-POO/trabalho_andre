@@ -1,6 +1,12 @@
 package menu;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import classes.PedidoItens;
+import classes.PedidoItensDB;
+import classes.Produto;
+import classes.ProdutoDB;
 import util.Util;
 
 public class Menu {
@@ -53,11 +59,22 @@ public class Menu {
 	}
 	
 	private static void menuPedido() {
-		System.out.println("Vacilei");
+
+		ArrayList<Produto> todosProdutos = ProdutoDB.buscarTodosProdutos();
+		// Exemplo de for each loop:
+		// p é o apelido de cada item no ArrayList todosProdutos
+		// : pode ser lido como "em" 
+		for (Produto p : todosProdutos) {
+			System.out.println(p.toString());
+		}
+
 	}
 	
 	private static void menuCliente() {
-		System.out.println("entrou");
+		ArrayList<PedidoItens> relacaoPedidoItem = PedidoItensDB.relacaoPedidoItem();
+		for(PedidoItens relacao : relacaoPedidoItem) {
+			System.out.println(relacao.toString());
+		}
 	}
 	
 	private static void menuProduto() {

@@ -1,5 +1,8 @@
 package principal;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
@@ -11,27 +14,22 @@ import menu.Menu;
 
 public class Principal {
 	
-		
 	private static boolean programaLigado = true; 
-	private static Scanner scanner = new Scanner(System.in);
-		
-	
-		
+	private static Scanner scanner = new Scanner(System.in);		
 	
 	public static void main(String[] args) {
+		
 		boolean hasConnectedToDb = connectToDatabase();
 		
-		if (hasConnectedToDb) {
+		do {
 			System.out.println("Conectado com sucesso!");
 			do	{
 				
 				Menu.executarMenu();
 				
-				
-			
 				programaLigado = conferirProgramaLigado();
 			} while (programaLigado); 
-		}
+		} while (hasConnectedToDb && programaLigado);
 		
 		System.out.println("\nObrigado(a) por utilizar o programa!");
 	}
