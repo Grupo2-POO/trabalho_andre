@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/.settings
+/.factorypath
+/*.launch
+/.swp
+**/.tmp
+/*.bak
+/.~
+/bin
