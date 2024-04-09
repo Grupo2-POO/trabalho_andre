@@ -12,8 +12,6 @@ public class PedidoItens {
 	protected int idPedidoitem;
     protected int quantidade_produto;
     
-    
-   
 //    @Override
 //	public String toString() {
 //		return "ValorUnitario: " + Util.converterMonetario(produto.getValorVenda()) + "\nValorDesconto: " 
